@@ -14,7 +14,7 @@
         <nav class="navbar fixed-bottom navbar-expand-lg p-0" style = "background-color: #800035;" >
             <div class="container-fluid">
                 <a class="navbar-brand p-1 m-0" href="https://twitter.com/mtequeno?s=21"  target="_blank" title="Twitter link">
-                    <img src="Assets\img\TwitterLogo" width="25" height="25" alt="Twitter Logo ">
+                    <img src="Assets\img\TwitterLogo" width="20" height="20" alt="Twitter Logo ">
                 </a>
                 <a class="navbar-brand p-1 m-0" href="https://instagram.com/mepeteque?igshid=MGU3ZTQzNzY=" target="_blank" title="Instagram link">
                     <img src="Assets\img\InstagramLogo" width="25" height="25" alt="Instagram Logo ">
