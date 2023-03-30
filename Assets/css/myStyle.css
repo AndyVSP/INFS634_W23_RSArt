@@ -1,27 +1,96 @@
+html {font-size: 100%;} 
+
+h1 {font-size: 2.488rem;
+    font-family: 'Caveat Brush', cursive;
+    color: #17000A;}
+
+h2 {font-size: 2.074rem;}
+
+h3 {font-size: 1.728rem;}
+
+h4 {font-size: 1.44rem;
+    color: #17000A;
+    font-family: 'Montserrat', sans-serif;}
+
+h5 {font-size: 1.2rem;
+    color: #17000A;
+    font-family: 'Montserrat', sans-serif;}
+
+body {
+    color: #17000A;
+    font-family: 'Lustria', serif;
+}
+
 .navbar-expand-lg .navbar-nav li a{
     font-family: "Caveat Brush", cursive;
-    font-size: 19.20px;
+    font-size: 1.44rem ;
     color: #F8EFFF;
     padding-left: 200px !important;
 }
 
-.navbar-expand-lg .container-fluid .col .navbar-text{
+.navbar-expand-lg .container-fluid .col-7 .navbar-text{
     font-family: "Caveat Brush", cursive;
-    font-size: 13.33px;
+    font-size: 0.833rem;
     color: #F8EFFF !important;
+    margin-left: 50px !important;
 }
+
+.navbar-expand-lg .container-fluid .col-5 .navbar-brand{
+    margin-left: 2% !important;}
 
 #homeLayout{
     margin-top: 25px !important
 }
 
 #homeImage img {
-    height: 95vh !important;
+    height: 100vh !important;
     width: 100% !important;
-    margin-right: 0;
+    margin: 25px 0px;
 }
 
 .container-fluid {
     padding: 0 !important;
     margin-right: 0 !important
+}
+
+.header-section{
+    margin: 125px 5% 2%;}
+
+.body-section {
+    margin: 1% 7% 2%;
+}
+
+.subHeading-section {
+    margin: 5% 7% 2%;
+    
+}
+
+#aboutMeImage img {
+    margin: 115px 0;
+    height: 100%;
+    width: 100%
+}
+
+#selectedWorks{
+    margin: 2% 7%;
+}
+
+#selectedWorks li {
+    margin-bottom: 5%;
+}
+#selectedWorks a {
+    color: #17000A;
+    font-family: 'Lustria', serif;
+}
+
+div.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 50vh;
+    width: 100%;
+    margin-right: 5%;}
+
+#commissions {
+    border-bottom: 1px solid #800035;
+    width: 100%;
 }
