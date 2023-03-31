@@ -8,11 +8,11 @@ h2 {font-size: 2.074rem;}
 
 h3 {font-size: 1.728rem;}
 
-h4 {font-size: 1.44rem;
-    color: #17000A;
-    font-family: 'Montserrat', sans-serif;}
+h4 {font-size: 1.44rem;}
 
-h5 {font-size: 1.2rem;
+h5 {font-size: 1.2rem;}
+   
+h2 h3 h4 h5 {
     color: #17000A;
     font-family: 'Montserrat', sans-serif;}
 
@@ -83,14 +83,43 @@ body {
     font-family: 'Lustria', serif;
 }
 
-div.scroll {
+.scroll {
     overflow-x: hidden;
     overflow-y: auto;
     height: 50vh;
     width: 100%;
     margin-right: 5%;}
 
+
 #commissions {
+    border-bottom: 1px solid #800035;
+    width: 100%;
+}
+
+#faq {
+    border-bottom: 1px solid #800035;
+    width: 100%;
+}
+
+#faq h4{
+    border-bottom: 1px solid #800035;
+    width: 100%;
+}
+
+#pricingInfo {
+    margin-bottom: 8% !important;
+    width: 100%;
+    margin-right: 0%;
+}
+
+#pricingInfo .accordion-item h2.accordion-header {
+    color: #17000A !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 2.074rem;
+    border-bottom: 1px solid #800035;
+}
+
+.accordion-body {
     border-bottom: 1px solid #800035;
     width: 100%;
 }
