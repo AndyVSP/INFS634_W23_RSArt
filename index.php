@@ -17,7 +17,7 @@
             <div class="col-6"> 
             </div>
             <div id = "homeImage" class="col-6">
-                <img src="Assets/img/HomeImage.png"  alt="Digtal portrait of a man with tan skin, medium-length black hair, and red eyes on a black and red background">
+                <img src="Assets/img/HomeImage.png"  alt="Digtal portrait of a man on a black and red background">
             </div>
         </div>
 
