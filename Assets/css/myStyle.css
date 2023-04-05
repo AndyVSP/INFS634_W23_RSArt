@@ -97,7 +97,7 @@ body {
 }
 
 #faq {
-    border-bottom: 1px solid #800035;
+    border-top: 1px solid transparent;
     width: 100%;
 }
 
@@ -122,4 +122,39 @@ body {
 .accordion-body {
     border-bottom: 1px solid #800035;
     width: 100%;
+}
+
+#pricingInfo .accordion-button:not(.collapsed){
+    background-color: transparent !important;
+    color: #17000A !important;
+    box-shadow: none !important;}
+
+#pricingInfo .customAccordionButton .accordion-button:focus  {
+    border-color: transparent !important;
+}
+
+
+div #sampleImages .card img{
+    height: 300px !important;
+    width: 100% !important;
+}
+
+div #sampleImages .card-body .card-text{
+    height: 10px !important;
+    width: 300px !important; 
+    color: #17000A;
+    font-family: 'Lustria', serif;
+    text-align: center;
+}
+
+.pricing_imgTop {
+    margin: 125px 5px 0px 125px !important;
+    height: 350px !important;
+    width: 302px !important;
+}
+
+.pricing_imgBottom{
+    margin: 50px 5px 50px 125px !important;
+    height: 350px !important;
+    width: 302px !important;
 }
