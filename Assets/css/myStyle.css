@@ -38,6 +38,10 @@ body {
 .navbar-expand-lg .container-fluid .col-5 .navbar-brand{
     margin-left: 2% !important;}
 
+.navbar-nav .nav-item.active a.nav-link {
+        color: #C4B2B5;
+    }
+
 #homeLayout{
     margin-top: 25px !important
 }
@@ -106,12 +110,16 @@ body {
     width: 100%;
 }
 
-#pricingInfo {
+#pricingInfo .accordion {
     margin-bottom: 8% !important;
     width: 100%;
     margin-right: 0%;
 }
-
+#pricingInfo .accordion-item {
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
 #pricingInfo .accordion-item h2.accordion-header {
     color: #17000A !important;
     font-family: 'Montserrat', sans-serif !important;
@@ -126,10 +134,16 @@ body {
 
 #pricingInfo .accordion-button:not(.collapsed){
     background-color: transparent !important;
+    border-color: transparent;
     color: #17000A !important;
     box-shadow: none !important;}
 
-#pricingInfo .customAccordionButton .accordion-button:focus  {
+#pricingInfo .accordion-button {
+    box-shadow: none !important;
+    border-color: transparent;
+}
+
+#pricingInfo .accordion-button:focus  {
     border-color: transparent !important;
 }
 
@@ -157,4 +171,44 @@ div #sampleImages .card-body .card-text{
     margin: 50px 5px 50px 125px !important;
     height: 350px !important;
     width: 302px !important;
+}
+
+#contactMe_form {
+    margin: 125px 125px 125px 175px;
+    padding: 10px;
+    width: 75%;
+    border: 1px solid #800035;
+    color: #17000A;
+    font-family: 'Lustria', serif;
+    transition-duration: 0s; }
+
+#contactMe_form .form-control {
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+#contactMe_form .form-control:focus {
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom-color:#800035;
+    box-shadow: none;}
+
+#contactSubmitButton{
+    font-family: "Caveat Brush", cursive;
+    color: #17000A;
+    background-color: #F8EFFF;
+    border-color: #800035;
+    font-size: 1.2rem;
+    padding: 5px 20px;
+}
+
+#message{
+    margin-top: 125px;
+    width: 75%;
+    margin-right: auto !important;
+    margin-left: auto;
+    text-align: center;
+    border: 1px solid #800035;
 }
