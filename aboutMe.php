@@ -38,7 +38,7 @@
                             <a href="">Fei. Description and other relevant info. February 2023.</a>
                         </li>
                         <li>
-                            <a href="">And Prayers. Description and other relevant info. March 2023.</a>
+                            <a href="">She. Description and other relevant info. March 2023.</a>
                         </li>
                         <li>
                             <a href="">Legion. Description and other relevant info. October 2022.</a>
@@ -47,7 +47,7 @@
                 </section>
             </div>
             <div id = "aboutMeImage" class="col-5">
-                <img src="Assets/img/G_Creek.jpg"  alt="painting of a group of people at a red waterfall with a capybara in the foreground">
+                <img src="Assets/img/AboutMeImage.jpg"  alt="painting of a group of people at a red waterfall with a capybara in the foreground">
             </div>
         <div>
         <?php include('footer.php'); ?>

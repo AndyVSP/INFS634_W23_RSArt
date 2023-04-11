@@ -6,22 +6,44 @@ $TimeDate = $date->format('Y-m-d H:i:s');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['email']) && !empty($_POST['fname']) && !empty($_POST['fname']) && !empty($_POST['subject']) && !empty($_POST['message'])){
        $email = $_POST['email'];
-       $check_id = "SELECT * FROM client WHERE id = '$email'";
+       $fname = $_POST['fname'];
+       $lname = $_POST['lname'];
+       $subject = $_POST['subject'];
+       $message = $_POST['message'];
+
+       $check_id = "SELECT * FROM client WHERE id = :id";
+       
        $stmt = $conn->prepare($check_id);
+       $stmt->bindParam(':id', $email);
        $stmt->execute();
        $results= $stmt->fetchAll();
 
     if (count($results) > 0) {
         $client_id = $results[0]['id'];
+
     } else {
-        $sql_client = "INSERT INTO `client` (`id`, `Name`, `Last_Name`) VALUES ('".$email."', '".$_POST['fname']."', '".$_POST['lname']."')";
+        $sql_client = "INSERT INTO `client` (`id`, `Name`, `Last_Name`) VALUES (:id, :Name, :Last_Name)";
+
         $stmt_2 = $conn->prepare($sql_client);
+        $stmt_2->bindParam(':id', $email);
+        $stmt_2->bindParam(':Name', $fname);
+        $stmt_2->bindParam(':Last_Name', $lname);
         $stmt_2->execute();
+
         $client_id = $email;
         }
 
-    $sql_message = "INSERT INTO `message`(`id`, `Date_Time`, `Subject`, `Text_Content`, `CLIENT_id`) VALUES (NULL, '".$TimeDate."', '".$_POST['subject']."', '".$_POST['message']."', '".$client_id."')";
+    $id = NULL;
+
+    $sql_message = "INSERT INTO `message`(`id`, `Date_Time`, `Subject`, `Text_Content`, `CLIENT_id`) VALUES (:id, :Date_Time, :Subject, :Text_Content, :CLIENT_id)";
+   
     $stmt_3 = $conn->prepare($sql_message);
+    $stmt_3->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt_3->bindParam(':Subject', $subject);
+    $stmt_3->bindParam(':Date_Time', $TimeDate);
+    $stmt_3->bindParam(':Text_Content', $message);
+    $stmt_3->bindParam(':CLIENT_id', $client_id);
+    
     if( ($stmt_3->execute())) {  //executing query to update the database 
         header('Location: success.php');
         exit;
