@@ -162,13 +162,21 @@ div #sampleImages .card-body .card-text{
 }
 
 .pricing_imgTop {
-    margin: 125px 5px 0px 125px !important;
+    margin-top: 125px !important;
     height: 350px !important;
     width: 302px !important;
 }
+.pricing_imgLeft {
+    margin-left: 100px;
+}
+
+.pricing_imgRight {
+    margin-left:100px;
+}
 
 .pricing_imgBottom{
-    margin: 50px 5px 50px 125px !important;
+    margin-top: 50px;
+    margin-bottom: 125px;
     height: 350px !important;
     width: 302px !important;
 }
@@ -212,3 +220,61 @@ div #sampleImages .card-body .card-text{
     text-align: center;
     border: 1px solid #800035;
 }
+
+#galleryLayout {
+    margin-top: 125px;
+    margin-bottom: 75px;
+
+}
+   
+#filterCol{
+    border-right: 2px solid #800035;
+}
+
+#galleryFilter.dropdown {
+    position: fixed !important;
+    margin-left: 10px;
+}
+    
+
+#galleryFilter.dropdown .btn{
+    color: #17000A !important;
+    background-color: #F8EFFF;
+    border-color: #800035;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.44rem;
+    padding: 10% 60%;
+}
+
+
+
+#galleryFilter.dropdown .btn-secondary.active, 
+#galleryFilter.dropdown .btn-secondary:focus {
+    background-color: #C4B2B5;
+}
+
+#galleryFilter.dropdown .dropdown-menu {
+    border-color: transparent;
+}
+
+#galleryFilter.dropdown .dropdown-item{
+    color: #17000A !important;
+    background-color: #F8EFFF;
+    border: 1px solid #800035;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 5% 
+}
+
+
+    
+.img-thumbnail{
+    height: 300px;
+    width:300px;
+    margin-bottom: 25px;
+};
+
+
+
+

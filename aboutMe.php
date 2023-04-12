@@ -14,7 +14,7 @@
     <body>
         <?php include('header.php'); ?>
         <div class="container-fluid d-flex">
-            <div class="col-7">
+            <div class="col-md-7">
                 <section class ="header-section"> 
                     <h1>About Me</h1>
                 </section>
@@ -46,7 +46,7 @@
                     </ul>
                 </section>
             </div>
-            <div id = "aboutMeImage" class="col-5">
+            <div id = "aboutMeImage" class="col-md-5">
                 <img src="Assets/img/AboutMeImage.jpg"  alt="painting of a group of people at a red waterfall with a capybara in the foreground">
             </div>
         <div>

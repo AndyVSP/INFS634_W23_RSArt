@@ -15,7 +15,7 @@
         <?php include('header.php'); ?>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4">
+                <div class="col-md-4">
                     <section class ="header-section"> 
                         <h1>Pricing</h1>
                     </section>
@@ -97,28 +97,28 @@
                         </div>
                     </div>
                 </div>
-                <div id = "sampleImages" class="col-4">
-                    <div class="card pricing_imgTop" style="height: 15rem; width: 18rem;">
+                <div id = "sampleImages" class="col-md-4">
+                    <div class="card pricing_imgTop pricing_imgLeft" style="height: 15rem; width: 18rem;">
                         <img src="Assets/img/PricingSample_1.png"  class="card-img-top" alt="Digtal portrait of a person on a black and red background"">
                         <div class="card-body">
                             <p class="card-text">$ 0.00</p>
                         </div>
                     </div>
-                    <div class="card pricing_imgBottom" style="height: 15rem; width: 18rem;">
+                    <div class="card pricing_imgBottom pricing_imgLeft" style="height: 15rem; width: 18rem;">
                         <img src="Assets/img/PricingSample_2.jpg" class="card-img-top" alt="Black and white print of a person on an abstract background">
                         <div class="card-body">
                             <p class="card-text">$ 0.00</p>
                         </div>
                     </div>
                 </div>
-                <div id = "sampleImages" class="col-4">
-                    <div class="card pricing_imgTop" style="height: 15rem; width: 18rem;">
+                <div id = "sampleImages" class="col-md-4">
+                    <div class="card pricing_imgTop pricing_imgRight" style="height: 15rem; width: 18rem;">
                         <img src="Assets/img/PricingSample_3.jpg"  class="card-img-top" alt="Digital portrait of a person in yellow on a black background">
                         <div class="card-body">
                             <p class="card-text">$ 0.00</p>
                         </div>
                     </div>
-                    <div class="card pricing_imgBottom" style="height: 15rem; width: 18rem;">
+                    <div class="card pricing_imgBottom pricing_imgRight" style="height: 15rem; width: 18rem;">
                         <img src="Assets/img/PricingSample_4.png" class="card-img-top" alt="Digtal abstract art in black red and white">
                         <div class="card-body">
                             <p class="card-text">$ 0.00</p>
