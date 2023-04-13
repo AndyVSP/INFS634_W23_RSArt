@@ -30,7 +30,7 @@ $tag_names = $stmt_2->fetchAll(PDO::FETCH_COLUMN);
         <?php include('header.php'); ?>
 
 
-        <div id = galleryLayout class="container-fluid d-flex">
+        <div id = galleryLayout class="container-fluid">
             <div class="row"> 
                 <div id = "filterCol" class="col-md-2">
                     <div id="galleryFilter" class="dropdown">
