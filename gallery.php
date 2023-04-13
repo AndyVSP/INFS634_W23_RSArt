@@ -1,8 +1,10 @@
 <?php 
 require 'Database/db_login.php'; 
-$get_imagePath = "SELECT image.Path FROM image JOIN work ON image.WORK_id = work.id ORDER BY work.Date DESC";
-$stmt = $conn->query($get_imagePath);
-$image_filepaths = $stmt->fetchAll(PDO::FETCH_COLUMN); 
+$get_imageInfo = "SELECT * FROM image JOIN work ON image.WORK_id = work.id ORDER BY work.Date DESC";
+$stmt = $conn->query($get_imageInfo);
+$image_Info = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+
+
 $get_tagName = "SELECT Name FROM tag";
 $stmt_2 = $conn->query($get_tagName);
 $tag_names = $stmt_2->fetchAll(PDO::FETCH_COLUMN); 
@@ -28,9 +30,9 @@ $tag_names = $stmt_2->fetchAll(PDO::FETCH_COLUMN);
         <?php include('header.php'); ?>
 
 
-        <div id = galleryLayout class="container-fluid">
+        <div id = galleryLayout class="container-fluid d-flex">
             <div class="row"> 
-                <div id = "filterCol" class="col-2">
+                <div id = "filterCol" class="col-md-2">
                     <div id="galleryFilter" class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Filter
@@ -38,18 +40,21 @@ $tag_names = $stmt_2->fetchAll(PDO::FETCH_COLUMN);
                         <ul class="dropdown-menu">
                         <?php foreach ($tag_names as $tag): ?>
                                 <li><a class="dropdown-item" href="#"><?php echo $tag?></a></li>
+                                
                         <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
-            <div id = "galleryThumbnails" class="col-10">
+            <div id = "galleryThumbnails" class="col-md-10">
                 <?php $i = 0; ?>
-                <?php foreach ($image_filepaths as $filepath): ?>
+                <?php foreach ($image_Info as $info): ?>
                     <?php if ($i % 4 == 0): ?>
                         <div class="row">
                     <?php endif; ?>
                     <div class="col-md-3">
-                        <img src="<?php echo $filepath ?>" class = "img-thumbnail">
+                        <a href="work.php?id=<?php echo urlencode($info['WORK_id']) ?>">
+                            <img src="<?php echo $info['Path'] ?>" class = "img-thumbnail">
+                        </a>
                     </div>
                     <?php $i++; ?>
                     <?php if ($i % 4 == 0): ?>
@@ -66,5 +71,5 @@ $tag_names = $stmt_2->fetchAll(PDO::FETCH_COLUMN);
         <?php include('footer.php'); ?>
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-       
+    </body> 
 </html>

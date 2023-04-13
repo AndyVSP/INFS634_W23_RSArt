@@ -70,34 +70,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['email']) && !empty($_P
     </head>
     <body>
         <?php include('header.php'); ?>
-        
-        <form id = "contactMe_form" action=# method="POST">
-            <div class = "container-fluid"> 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Name:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Jean" name= "fname" required>
+        <div class = "container-fluid d-flex"> 
+            <form id = "contactMe_form" action=# method="POST">
+                <div class = "container-fluid"> 
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Jean" name= "fname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Last Name:</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Grey" name = "lname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address:</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name ="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Subject:</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Commission" name = "subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name = "message" required></textarea>
+                    </div>
+                    <div class="container-fluid text-end">
+                        <button id = "contactSubmitButton" type="submit" class="btn btn-primary ms-auto">Submit</button>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Last Name:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Grey" name = "lname" required>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address:</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name ="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Subject:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Commission" name = "subject" required>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name = "message" required></textarea>
-                </div>
-                <div class="container-fluid text-end">
-                    <button id = "contactSubmitButton" type="submit" class="btn btn-primary ms-auto">Submit</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
         
         <?php include('footer.php'); ?>
 
