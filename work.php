@@ -1,8 +1,9 @@
 <?php 
 require 'Database/db_login.php';
-$get_workInfo = "SELECT work.*, tag.Name FROM work 
+$get_workInfo = "SELECT work.*, tag.Name, image.Path FROM work 
     LEFT JOIN  tag_work ON work.id = tag_work.WORK_id
     LEFT JOIN tag ON tag_work.TAG_id = tag.id
+    LEFT JOIN image ON work.id = image.WORK_id
     WHERE work.id = '".$_GET['id']."'";
 
 $stmt = $conn->query($get_workInfo);
@@ -28,22 +29,28 @@ $stmt = $conn->query($get_workInfo);
 
         <div id = workLayout class="container-fluid d-flex">
             <div class="row"> 
-            <?php  while($results= $stmt->fetch(PDO::FETCH_ASSOC)){ ?>
-                <div id = "workInfo" class="col-md-4">
-                    <h1 class = "header-section">
-                        <?php echo $results['Title']?>
-                    </h1>
-                    <br>
-                    <h4 id = descriptionHeading class = "subHeading-Section"> 
-                        Description
-                    </h4>
-                    <p class = "body-section">
-                </div>
-                <div id = "workImage" class="col-md-8">
-                </div>
-                <?php } ?>
+            <?php 
+            $printInfo = false;
+            while($results= $stmt->fetch(PDO::FETCH_ASSOC)){ 
+                    if (!$printInfo) { ?>
+                    <div id = "workInfo" class="col-md-4">
+                        <h1 class = "header-section">
+                            <?php echo $results['Title']?>
+                        </h1>
+                        <br>
+                        <h4 id = descriptionHeading class = "subHeading-Section"> 
+                            Description
+                        </h4>
+                        <p class = "body-section">
+                            <?php echo $results['Description']?>
+                    </div>
+                    <div id = "workImage" class="col-md-8">
+                        <img src="<?php echo $results['Path'] ?>" class = "img-fluid">
+                    </div>
+                    <?php $printInfo = true; 
+                    }
+                 } ?>
             </div>
-            
         </div>
 
         <?php include('footer.php'); ?>
