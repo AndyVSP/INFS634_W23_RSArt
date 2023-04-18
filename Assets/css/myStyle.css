@@ -1,6 +1,6 @@
 html {font-size: 100%;} 
 
-h1 {font-size: 2.488rem;
+h1 {font-size: 64px;
     font-family: 'Caveat Brush', cursive;
     color: #17000A;}
 
@@ -25,7 +25,8 @@ body {
     font-family: "Caveat Brush", cursive;
     font-size: 1.44rem ;
     color: #F8EFFF;
-    padding-left: 200px !important;
+    padding-left: 125px !important;
+    padding-right: 100px !important;
 }
 
 .navbar-expand-lg .container-fluid .col-7 .navbar-text{
@@ -37,13 +38,13 @@ body {
 
 .navbar-expand-lg .container-fluid .col-5 .navbar-brand{
     margin-left: 2% !important;}
-
+    
 .navbar-nav .nav-item.active a.nav-link {
         color: #C4B2B5;
     }
 
 #homeLayout{
-    margin-top: 25px !important
+    margin-top: 25px !important;
 }
 
 #homeImage img {
@@ -273,5 +274,27 @@ div #sampleImages .card-body .card-text{
     height: 300px;
     width:300px;
     margin-bottom: 25px;
-};
+}
 
+#imageLayout {
+    margin-top: 125px;
+    margin-bottom: 75px;
+    justify-content: center;
+    align-items: center;}
+
+#workLayout .workImageContainer {
+    width: 700px;
+    height: 900px;
+    margin: auto auto 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#workImage {
+    max-width: 100%;
+    max-height: 100%;
+    text-align: center;
+
+}

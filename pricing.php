@@ -16,11 +16,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
-                    <section class ="header-section"> 
-                        <h1>Pricing</h1>
+                    <section > 
+                        <h1 class ="header-section">Pricing</h1>
                     </section>
-                    <section id = "commissions" class ="subHeading-section">
-                            <h4> Commissions </h4>
+                    <section id = "commissions" >
+                            <h2 class ="subHeading-section"> Commissions </h2>
                     </section>
                     <div class = "scroll body-section">
                         <ul id = "selectedWorks">
@@ -48,7 +48,7 @@
                         </ul>
                     </div>
                     <section id = "faq" class ="subHeading-section"> 
-                    <h4> FAQs </h4>
+                    <h2> FAQs </h2>
                     </seciton>
                     <div class="accordion accordion-flush-accordion" id="pricingInfo">
                         <div class="accordion-item">
@@ -99,13 +99,17 @@
                 </div>
                 <div id = "sampleImages" class="col-md-4">
                     <div class="card pricing_imgTop pricing_imgLeft" style="height: 15rem; width: 18rem;">
-                        <img src="Assets/img/PricingSample_1.png"  class="card-img-top" alt="Digtal portrait of a person on a black and red background"">
+                        <a href="work.php?id=19">
+                            <img src="Assets/img/PricingSample_1.png"  class="card-img-top" alt="Digtal portrait of a person on a black and red background"> 
+                        </a>
                         <div class="card-body">
                             <p class="card-text">$ 0.00</p>
                         </div>
                     </div>
                     <div class="card pricing_imgBottom pricing_imgLeft" style="height: 15rem; width: 18rem;">
-                        <img src="Assets/img/PricingSample_2.jpg" class="card-img-top" alt="Black and white print of a person on an abstract background">
+                        <a href="work.php?id=9">
+                            <img src="Assets/img/PricingSample_2.jpg" class="card-img-top" alt="Black and white print of a person on an abstract background">
+                        </a>
                         <div class="card-body">
                             <p class="card-text">$ 0.00</p>
                         </div>
@@ -113,13 +117,17 @@
                 </div>
                 <div id = "sampleImages" class="col-md-4">
                     <div class="card pricing_imgTop pricing_imgRight" style="height: 15rem; width: 18rem;">
-                        <img src="Assets/img/PricingSample_3.jpg"  class="card-img-top" alt="Digital portrait of a person in yellow on a black background">
+                        <a href="work.php?id=12">
+                            <img src="Assets/img/PricingSample_3.jpg"  class="card-img-top" alt="Digital portrait of a person in yellow on a black background">
+                        </a>
                         <div class="card-body">
                             <p class="card-text">$ 0.00</p>
                         </div>
                     </div>
                     <div class="card pricing_imgBottom pricing_imgRight" style="height: 15rem; width: 18rem;">
-                        <img src="Assets/img/PricingSample_4.png" class="card-img-top" alt="Digtal abstract art in black red and white">
+                        <a href="work.php?id=13">
+                            <img src="Assets/img/PricingSample_4.png" class="card-img-top" alt="Digtal abstract art in black red and white">
+                        </a>
                         <div class="card-body">
                             <p class="card-text">$ 0.00</p>
                         </div>

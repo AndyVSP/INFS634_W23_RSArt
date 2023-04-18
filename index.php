@@ -17,7 +17,9 @@
             <div class="col-md-6"> 
             </div>
             <div id = "homeImage" class="col-md-6">
-                <img src="Assets/img/HomeImage.png"  alt="Digtal portrait of a man on a black and red background">
+                <a href="work.php?id=19">
+                    <img src="Assets/img/HomeImage.png"  alt="Digtal portrait of a man on a black and red background">
+                </a>
             </div>
         </div>
 

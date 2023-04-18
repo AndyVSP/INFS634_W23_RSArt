@@ -15,39 +15,34 @@
         <?php include('header.php'); ?>
         <div class="container-fluid d-flex">
             <div class="col-md-7">
-                <section class ="header-section"> 
-                    <h1>About Me</h1>
-                </section>
-                <section class ="body-section">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Fusce mi nibh, suscipit quis ipsum et, facilisis vehicula risus. 
-                        Nulla lacinia ipsum sed erat molestie rhoncus. Praesent venenatis magna sed ultricies iaculis. Fusce sed rutrum nisi. 
-                        Pellentesque blandit, nisl lacinia tincidunt molestie, libero mi blandit lorem, a fringilla neque leo at ante.
-                        Mauris consectetur nunc hendrerit, vehicula erat ut, porttitor massa. Vivamus pretium quis diam eu laoreet. 
-                        Aenean quam purus, sagittis at neque ac, pharetra eleifend lacus. Aenean vel elit nunc. In sagittis elit sit amet arcu fringilla, ut molestie massa rutrum. 
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris vel quam in elit interdum tempor vitae a purus. Pellentesque at cursus augue. 
-                        Suspendisse posuere volutpat vestibulum. Ut sem magna, rhoncus in odio nec, vehicula ornare nibh. Suspendisse potenti. 
-                    </p> 
-                </section>
-                <section class ="subHeading-section">
-                    <h4> Selected Works: </h4>
-                </section>
-                <section>
-                    <ul id = "selectedWorks">
-                        <li>
-                            <a href="">Fei. Description and other relevant info. February 2023.</a>
-                        </li>
-                        <li>
-                            <a href="">She. Description and other relevant info. March 2023.</a>
-                        </li>
-                        <li>
-                            <a href="">Legion. Description and other relevant info. October 2022.</a>
-                        </li>
-                    </ul>
-                </section>
+                <h1 class ="header-section" >About Me</h1>
+                <p class ="body-section">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce mi nibh, suscipit quis ipsum et, facilisis vehicula risus. 
+                    Nulla lacinia ipsum sed erat molestie rhoncus. Praesent venenatis magna sed ultricies iaculis. Fusce sed rutrum nisi. 
+                    Pellentesque blandit, nisl lacinia tincidunt molestie, libero mi blandit lorem, a fringilla neque leo at ante.
+                    Mauris consectetur nunc hendrerit, vehicula erat ut, porttitor massa. Vivamus pretium quis diam eu laoreet. 
+                    Aenean quam purus, sagittis at neque ac, pharetra eleifend lacus. Aenean vel elit nunc. In sagittis elit sit amet arcu fringilla, ut molestie massa rutrum. 
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris vel quam in elit interdum tempor vitae a purus. Pellentesque at cursus augue. 
+                    Suspendisse posuere volutpat vestibulum. Ut sem magna, rhoncus in odio nec, vehicula ornare nibh. Suspendisse potenti. 
+                </p> 
+                <h2 class ="subHeading-section"> Selected Works: </h2>
+                <ul id = "selectedWorks">
+                    <li>
+                        <a href="work.php?id=8">Fei. Description and other relevant info. February 2023.</a>
+                    </li>
+                    <li>
+                        <a href="work.php?id=22">She. Description and other relevant info. March 2023.</a>
+                    </li>
+                    <li>
+                        <a href="work.php?id=14">Legion. Description and other relevant info. October 2022.</a>
+                    </li>
+                </ul>
             </div>
             <div id = "aboutMeImage" class="col-md-5">
-                <img src="Assets/img/AboutMeImage.jpg"  alt="painting of a group of people at a red waterfall with a capybara in the foreground">
+                <a href="work.php?id=18">
+                    <img src="Assets/img/AboutMeImage.jpg"  alt="painting of a group of people at a red waterfall with a capybara in the foreground">
+                </a>
             </div>
         <div>
         <?php include('footer.php'); ?>

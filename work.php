@@ -1,14 +1,29 @@
 <?php 
 require 'Database/db_login.php';
-$get_workInfo = "SELECT work.*, tag.Name, image.Path FROM work 
-    LEFT JOIN  tag_work ON work.id = tag_work.WORK_id
-    LEFT JOIN tag ON tag_work.TAG_id = tag.id
-    LEFT JOIN image ON work.id = image.WORK_id
-    WHERE work.id = '".$_GET['id']."'";
+$get_workInfo = "SELECT * FROM work WHERE id = '".$_GET['id']."'";
+$get_workImages = "SELECT Path FROM image WHERE WORK_id = '".$_GET['id']."'";
+$get_workTags = "SELECT tag.Name, tag.id FROM tag_work
+JOIN tag ON tag_work.TAG_id = tag.id
+WHERE tag_work.WORK_id = '".$_GET['id']."'";
 
 $stmt = $conn->query($get_workInfo);
-?>
+$stmt_2 = $conn->query($get_workImages);
+$stmt_3 = $conn->query($get_workTags);
 
+$images = $stmt_2->fetchAll(PDO::FETCH_ASSOC);
+$tags = $stmt_3->fetchAll(PDO::FETCH_ASSOC);
+
+$current_workId = $_GET['id'];
+
+$get_nextWork = "SELECT id FROM work WHERE Date < (SELECT Date FROM work WHERE id = $current_workId) ORDER BY Date DESC LIMIT 1";
+$stmt_4 = $conn->query($get_nextWork);
+$next_workId = $stmt_4->fetchColumn();
+
+$get_prevWork = "SELECT id FROM work WHERE Date > (SELECT Date FROM work WHERE id = $current_workId) ORDER BY Date DESC LIMIT 1";
+$stmt_5 = $conn->query($get_prevWork);
+$prev_workId = $stmt_5->fetchColumn();
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -30,26 +45,49 @@ $stmt = $conn->query($get_workInfo);
         <div id = workLayout class="container-fluid d-flex">
             <div class="row"> 
             <?php 
-            $printInfo = false;
-            while($results= $stmt->fetch(PDO::FETCH_ASSOC)){ 
-                    if (!$printInfo) { ?>
-                    <div id = "workInfo" class="col-md-4">
+            while($results= $stmt->fetch(PDO::FETCH_ASSOC)){ ?>
+                    <div id = "workInfo" class="col-md-5">
                         <h1 class = "header-section">
                             <?php echo $results['Title']?>
                         </h1>
-                        <br>
-                        <h4 id = descriptionHeading class = "subHeading-Section"> 
+                        <!--
+                        <div class="navigation-buttons">
+                            <?php if($prev_workId) { ?>
+                                <a href="work.php?id=<?php echo $prev_workId; ?>" class="btn btn-primary">
+                                    <img src = "Assets\img\arrow_left.png">
+                                </a>
+                            <?php } ?>
+                            <?php if($next_workId) { ?>
+                                <a href="work.php?id=<?php echo $next_workId; ?>" class="btn btn-primary">
+                                    <img src = "Assets\img\arrow_right.png">
+                                </a>
+                            <?php } ?>
+                        </div>
+                        -->
+                        <h2 class = "subHeading-section descriptionHeading"> 
                             Description
-                        </h4>
+                        </h2>
+                        <br>
                         <p class = "body-section">
                             <?php echo $results['Description']?>
+                        </p>
+                        <br>
+                        <p style = "margin-left: 7%; font-family: Caveat Brush, cursive">
+                                Tags:
+                        <?php foreach ($tags as $key => $tag) {?>
+                                <?php echo $tag['Name']; 
+                                 if ($key < count($tags) - 1) { echo ', '; }
+                        } ?>
+                        </p>
                     </div>
-                    <div id = "workImage" class="col-md-8">
-                        <img src="<?php echo $results['Path'] ?>" class = "img-fluid">
+                    <div id = "imageLayout" class="col-md-7">
+                    <?php foreach ($images as $image) {?>
+                        <div class = "workImageContainer"> 
+                            <img id = "workImage" src="<?php echo $image['Path']?>" alt= "image belonging with this work of art">
+                        </div>
+                    <?php } ?>
                     </div>
-                    <?php $printInfo = true; 
-                    }
-                 } ?>
+                <?php  } ?>
             </div>
         </div>
 

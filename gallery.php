@@ -53,7 +53,7 @@ $tag_names = $stmt_2->fetchAll(PDO::FETCH_COLUMN);
                     <?php endif; ?>
                     <div class="col-md-3">
                         <a href="work.php?id=<?php echo urlencode($info['WORK_id']) ?>">
-                            <img src="<?php echo $info['Path'] ?>" class = "img-thumbnail">
+                            <img src="<?php echo $info['Path'] ?>" class = "img-thumbnail" alt= "Thumbnail of image titled <?php echo $info['Title'] ?>" >
                         </a>
                     </div>
                     <?php $i++; ?>
