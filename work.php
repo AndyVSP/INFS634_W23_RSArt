@@ -19,7 +19,7 @@ $get_nextWork = "SELECT id FROM work WHERE Date < (SELECT Date FROM work WHERE i
 $stmt_4 = $conn->query($get_nextWork);
 $next_workId = $stmt_4->fetchColumn();
 
-$get_prevWork = "SELECT id FROM work WHERE Date > (SELECT Date FROM work WHERE id = $current_workId) ORDER BY Date DESC LIMIT 1";
+$get_prevWork = "SELECT id FROM work WHERE Date > (SELECT Date FROM work WHERE id = $current_workId) ORDER BY Date ASC LIMIT 1";
 $stmt_5 = $conn->query($get_prevWork);
 $prev_workId = $stmt_5->fetchColumn();
 
@@ -50,20 +50,18 @@ $prev_workId = $stmt_5->fetchColumn();
                         <h1 class = "header-section">
                             <?php echo $results['Title']?>
                         </h1>
-                        <!--
                         <div class="navigation-buttons">
                             <?php if($prev_workId) { ?>
-                                <a href="work.php?id=<?php echo $prev_workId; ?>" class="btn btn-primary">
+                                <a href="work.php?id=<?php echo $prev_workId; ?>" class="btn btn-primary navbutton">
                                     <img src = "Assets\img\arrow_left.png">
                                 </a>
                             <?php } ?>
                             <?php if($next_workId) { ?>
-                                <a href="work.php?id=<?php echo $next_workId; ?>" class="btn btn-primary">
+                                <a href="work.php?id=<?php echo $next_workId; ?>" class="btn btn-primary navbutton">
                                     <img src = "Assets\img\arrow_right.png">
                                 </a>
                             <?php } ?>
                         </div>
-                        -->
                         <h2 class = "subHeading-section descriptionHeading"> 
                             Description
                         </h2>
@@ -73,17 +71,19 @@ $prev_workId = $stmt_5->fetchColumn();
                         </p>
                         <br>
                         <p style = "margin-left: 7%; font-family: Caveat Brush, cursive">
-                                Tags:
+                                Tags: 
                         <?php foreach ($tags as $key => $tag) {?>
-                                <?php echo $tag['Name']; 
-                                 if ($key < count($tags) - 1) { echo ', '; }
+                            <a style= "color: #17000A" href="gallery.php?tag=<?php echo $tag['Name']; ?>"><?php echo $tag['Name']; ?></a>
+                            <?php if ($key < count($tags) - 1) { echo ', '; }
                         } ?>
                         </p>
                     </div>
                     <div id = "imageLayout" class="col-md-7">
                     <?php foreach ($images as $image) {?>
                         <div class = "workImageContainer"> 
-                            <img id = "workImage" src="<?php echo $image['Path']?>" alt= "image belonging with this work of art">
+                            <a href="<?php echo $image['Path']?>" target="_blank">
+                                <img id = "workImage" src="<?php echo $image['Path']?>" alt= "image belonging with this work of art">
+                            </a>
                         </div>
                     <?php } ?>
                     </div>

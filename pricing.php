@@ -47,6 +47,7 @@
                             </li>
                         </ul>
                     </div>
+                    <br>
                     <section id = "faq" class ="subHeading-section"> 
                     <h2> FAQs </h2>
                     </seciton>

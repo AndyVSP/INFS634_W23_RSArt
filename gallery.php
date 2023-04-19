@@ -1,7 +1,23 @@
 <?php 
 require 'Database/db_login.php'; 
-$get_imageInfo = "SELECT * FROM image JOIN work ON image.WORK_id = work.id ORDER BY work.Date DESC";
-$stmt = $conn->query($get_imageInfo);
+$selected_tag = "";
+$selected_tag = $_GET['tag'] ?? '';
+$get_imageInfo = '';
+
+if ($selected_tag){
+    $get_imageInfo = " SELECT * FROM image 
+    JOIN work ON image.WORK_id = work.id 
+    JOIN tag_work ON tag_work.WORK_id = work.id 
+    JOIN tag ON tag_work.TAG_id = tag.id 
+    WHERE tag.Name = :tag 
+    ORDER BY work.Date DESC";
+    $stmt = $conn->prepare($get_imageInfo);
+    $stmt->bindParam(':tag', $selected_tag, PDO::PARAM_STR);
+    $stmt->execute();
+} else {
+    $get_imageInfo = "SELECT * FROM image JOIN work ON image.WORK_id = work.id ORDER BY work.Date DESC";
+    $stmt = $conn->query($get_imageInfo);}
+
 $image_Info = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
 
@@ -37,13 +53,16 @@ $tag_names = $stmt_2->fetchAll(PDO::FETCH_COLUMN);
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Filter
                         </button>
-                        <ul class="dropdown-menu">
+                        <ul id="tag-dropdown" class="dropdown-menu">
                         <?php foreach ($tag_names as $tag): ?>
-                                <li><a class="dropdown-item" href="#"><?php echo $tag?></a></li>
-                                
+                            <?php if ($tag == $selected_tag): ?>
+                                <li><a class="dropdown-item" href="?" style = "background-color: #C4B2B5;"><?php echo $tag?></a></li>
+                            <?php else: ?>
+                                <li><a class="dropdown-item" href="?tag=<?php echo urlencode($tag) ?>"><?php echo $tag?></a></li>
+                            <?php endif; ?>
                         <?php endforeach; ?>
-                        </ul>
                     </div>
+                    </ul>
                 </div>
             <div id = "galleryThumbnails" class="col-md-10">
                 <?php $i = 0; ?>
@@ -69,7 +88,6 @@ $tag_names = $stmt_2->fetchAll(PDO::FETCH_COLUMN);
         </div>
 
         <?php include('footer.php'); ?>
-    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body> 
 </html>
