@@ -1,4 +1,4 @@
-!doctype html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -14,13 +14,14 @@
     <body>
         <?php include('header.php'); ?>
 
+<!-- ==== Failure Page Start ==== -->
         <div id = "message" class = "container-fluid">
         <h1 class = "header-section">Sorry!</h1>
 	        <p id = "failureMessage" class = "body"> There was an error sending your message. Please try again.</p>
         </div>
+<!-- ==== Failure Page End ==== -->
 
         <?php include('footer.php'); ?>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>

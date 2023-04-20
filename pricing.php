@@ -13,12 +13,15 @@
     </head>
     <body>
         <?php include('header.php'); ?>
+        
+        <!-- ==== Pricing Start ==== -->
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
                     <section > 
                         <h1 class ="header-section">Pricing</h1>
                     </section>
+                    <!-- ==== Commissions Start ==== -->
                     <section id = "commissions" >
                             <h2 class ="subHeading-section"> Commissions </h2>
                     </section>
@@ -47,7 +50,9 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- ==== Commissions End ==== -->
                     <br>
+                    <!-- ==== FAQs Start ==== -->
                     <section id = "faq" class ="subHeading-section"> 
                     <h2> FAQs </h2>
                     </seciton>
@@ -98,6 +103,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- ==== FAQs End ==== -->
+                <!-- ==== Sample Images Start ==== -->
                 <div id = "sampleImages" class="col-md-4">
                     <div class="card pricing_imgTop pricing_imgLeft" style="height: 15rem; width: 18rem;">
                         <a href="work.php?id=19">
@@ -134,12 +141,14 @@
                         </div>
                     </div>
                 </div>
+                <!-- ==== Sample Images End==== -->
             </div>
         </div>
         <br>
         <br>
-        <?php include('footer.php'); ?>
-        
+         <!-- ==== Pricing End ==== -->
+
+        <?php include('footer.php'); ?>  
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>

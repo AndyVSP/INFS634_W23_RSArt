@@ -1,3 +1,5 @@
+/* General formatting */
+
 html {font-size: 100%;} 
 
 h1 {font-size: 64px;
@@ -21,6 +23,19 @@ body {
     font-family: 'Lustria', serif;
 }
 
+.header-section{
+    margin: 125px 5% 2%;}
+
+.body-section {
+    margin: 1% 7% 2%;
+}
+
+.subHeading-section {
+    margin: 5% 7% 2%;  
+}
+
+/* Header and footer*/
+
 .navbar-expand-lg .navbar-nav li a{
     font-family: "Caveat Brush", cursive;
     font-size: 1.44rem ;
@@ -43,6 +58,7 @@ body {
         color: #C4B2B5;
     }
 
+/* Home Page */
 #homeLayout{
     margin-top: 25px !important;
 }
@@ -58,17 +74,7 @@ body {
     margin-right: 0 !important
 }
 
-.header-section{
-    margin: 125px 5% 2%;}
-
-.body-section {
-    margin: 1% 7% 2%;
-}
-
-.subHeading-section {
-    margin: 5% 7% 2%;
-    
-}
+/* About Me */
 
 #aboutMeImage img {
     margin: 115px 0;
@@ -88,16 +94,19 @@ body {
     font-family: 'Lustria', serif;
 }
 
+/* Pricing*/
+
 .scroll {
     overflow-x: hidden;
     overflow-y: auto;
     height: 50vh;
     width: 100%;
-    margin-right: 5%;}
+    margin-right: 5%;
+    border-top: 1px solid #800035;
+}
 
 
 #commissions {
-    border-bottom: 1px solid #800035;
     width: 100%;
 }
 
@@ -177,10 +186,12 @@ div #sampleImages .card-body .card-text{
 
 .pricing_imgBottom{
     margin-top: 50px;
-    margin-bottom: 125px;
+    margin-bottom: 25px;
     height: 350px !important;
     width: 302px !important;
 }
+
+/* Contact Me */
 
 #contactMe_form {
     margin: 125px 125px 125px 175px;
@@ -221,6 +232,7 @@ div #sampleImages .card-body .card-text{
     text-align: center;
     border: 1px solid #800035;
 }
+/* Gellery */
 
 #galleryLayout {
     margin-top: 125px;
@@ -246,8 +258,6 @@ div #sampleImages .card-body .card-text{
     font-size: 1.44rem;
     padding: 10% 60%;
 }
-
-
 
 #galleryFilter.dropdown .btn-secondary.active, 
 #galleryFilter.dropdown .btn-secondary:focus {
@@ -287,6 +297,8 @@ div #sampleImages .card-body .card-text{
     margin-bottom: 75px;
     justify-content: center;
     align-items: center;}
+
+/* Work Page*/
 
 #workLayout .workImageContainer {
     width: 700px;

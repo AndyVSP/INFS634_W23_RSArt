@@ -1,26 +1,31 @@
+ <!-- ==== PHP to load info into database start ==== -->
 <?php 
+//connect to database
 require 'Database/db_login.php'; 
 date_default_timezone_set('America/Toronto'); //setting default timezone
 $date = new DateTime(); //Creating a variable for DateTime
 $TimeDate = $date->format('Y-m-d H:i:s');
 
+//if the form fields are not empty
+// save those inputs as variables
 if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['email']) && !empty($_POST['fname']) && !empty($_POST['fname']) && !empty($_POST['subject']) && !empty($_POST['message'])){
        $email = $_POST['email'];
        $fname = $_POST['fname'];
        $lname = $_POST['lname'];
        $subject = $_POST['subject'];
        $message = $_POST['message'];
-
+//SQL query for checking if the client id (email) already exists in the databse
        $check_id = "SELECT * FROM client WHERE id = :id";
        
        $stmt = $conn->prepare($check_id);
        $stmt->bindParam(':id', $email);
        $stmt->execute();
        $results= $stmt->fetchAll();
-
+//if it does save it as the client_id variable
     if (count($results) > 0) {
         $client_id = $results[0]['id'];
-
+//if it does not create a new row for that client in the client table with their email as id, and their name and last name
+//and save the email in the client_id variable
     } else {
         $sql_client = "INSERT INTO `client` (`id`, `Name`, `Last_Name`) VALUES (:id, :Name, :Last_Name)";
 
@@ -33,8 +38,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['email']) && !empty($_P
         $client_id = $email;
         }
 
+//set the message id to NULL because it autoincrements in the database
     $id = NULL;
-
+//sql query for inserting message intop the message table in the database
     $sql_message = "INSERT INTO `message`(`id`, `Date_Time`, `Subject`, `Text_Content`, `CLIENT_id`) VALUES (:id, :Date_Time, :Subject, :Text_Content, :CLIENT_id)";
    
     $stmt_3 = $conn->prepare($sql_message);
@@ -43,17 +49,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['email']) && !empty($_P
     $stmt_3->bindParam(':Date_Time', $TimeDate);
     $stmt_3->bindParam(':Text_Content', $message);
     $stmt_3->bindParam(':CLIENT_id', $client_id);
-    
-    if( ($stmt_3->execute())) {  //executing query to update the database 
+
+//if the database is updated successfully load the sucesss page
+    if( ($stmt_3->execute())) {  
         header('Location: success.php');
         exit;
+// if it isn't load the failure page
     } else {
         header('Location: failure.php');
         exit; 
         }
 } 
-
 ?>
+ <!-- ==== PHP to load info into database end ==== -->
 
 <!doctype html>
 <html lang="en">
@@ -70,38 +78,38 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['email']) && !empty($_P
     </head>
     <body>
         <?php include('header.php'); ?>
+
+    <!-- ==== Contact page start ==== -->
         <div class = "container-fluid d-flex"> 
             <form id = "contactMe_form" action=# method="POST">
-                <div class = "container-fluid"> 
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Jean" name= "fname" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Last Name:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Grey" name = "lname" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email address:</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name ="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Subject:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Commission" name = "subject" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name = "message" required></textarea>
-                    </div>
-                    <div class="container-fluid text-end">
-                        <button id = "contactSubmitButton" type="submit" class="btn btn-primary ms-auto">Submit</button>
-                    </div>
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="Name" placeholder="Jean" name= "fname" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Last Name" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="Last Name" placeholder="Grey" name = "lname" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address:</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name ="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Subject" class="form-label">Subject:</label>
+                    <input type="text" class="form-control" id="Subject" placeholder="Commission" name = "subject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="Message" rows="3" name = "message" required></textarea>
+                </div>
+                <div class="container-fluid text-end">
+                    <button id = "contactSubmitButton" type="submit" class="btn btn-primary ms-auto">Submit</button>
                 </div>
             </form>
         </div>
-        
+    <!-- ==== Contact Page End ==== -->
+
         <?php include('footer.php'); ?>
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -1,62 +1,58 @@
-# Project Title
-
-Simple overview of use/purpose.
+# Renata Salazar (RSArt)
+ 
+This website is an art portfolio for Renata Salazar Parra.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+The goal of this website is to support Renata's professional goals. The website will act as an extension of her professional brand, give her a space to showcase her art, as well as allow for clients to contact her.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* PHP 8.0.26
+* MySQL 8.0.31
+* Apache 2.4.54.2
+* CSS3
+* HTML5 
+* Bootstrap 5.3
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* The website files can be downloaded through the Git repository.
+* The database structure and content will be submitted through myCourses, per assignment instructions.
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+* Open project folder location in server.
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+...
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Andy Salazar Parra
+andrea.salazarparra@mail.mcgill.ca
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is not under any liscence at this moment.
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Instruction and Guidance:
+* [Kartikay Chadha](https://github.com/kartikaychadha)
+
+Design Feedback:
+* [Kartikay Chadha](https://github.com/kartikaychadha)
+* INFS 634 W23 Class
+* Renata Salazar Parra
+
+README Template:
+* [DomPizze](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)

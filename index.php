@@ -13,6 +13,8 @@
     </head>
     <body>
         <?php include('header.php'); ?>
+
+        <!-- ==== Home Page Start ==== -->
         <div id = "homeLayout" class="container-fluid d-flex">
             <div class="col-md-6"> 
             </div>
@@ -22,9 +24,9 @@
                 </a>
             </div>
         </div>
+        <!-- ==== Home Page End ==== -->
 
         <?php include('footer.php'); ?>
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>

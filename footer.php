@@ -1,6 +1,7 @@
-
+<!-- ==== Footer Start ==== -->
 <nav id = footer class="navbar fixed-bottom navbar-expand-lg p-0 m-0" style = "background-color: #800035;" >
     <div class="container-fluid d-flex">
+        <!-- ==== Social Media Links Start ==== -->
         <div class="col-5">
             <a class="navbar-brand" href="https://twitter.com/mtequeno?s=21"  target="_blank" title="Twitter link">
                 <img src="Assets\img\TwitterLogo.png" width="25" height="25" alt="Twitter Logo ">
@@ -12,6 +13,7 @@
                 <img src="Assets\img\TumblrLogo.png" width="27" height="27" alt="Tumblr Logo ">
             </a>
         </div>
+        <!-- ==== Social Media Links End ==== -->
         <div class="col-7">
             <span class="navbar-text">
                 &copy; 2023 Renata Salazar
@@ -19,3 +21,4 @@
         </div>
     </div>
 </nav>
+<!-- ==== Footer End ==== -->

@@ -13,9 +13,13 @@
     </head>
     <body>
         <?php include('header.php'); ?>
+        
+        <!-- ==== About Me Start ==== -->
         <div class="container-fluid d-flex">
             <div class="col-md-7">
+                <!-- ==== Heading ==== -->
                 <h1 class ="header-section" >About Me</h1>
+                <!-- ==== Main Text ==== -->
                 <p class ="body-section">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Fusce mi nibh, suscipit quis ipsum et, facilisis vehicula risus. 
@@ -26,27 +30,31 @@
                     Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris vel quam in elit interdum tempor vitae a purus. Pellentesque at cursus augue. 
                     Suspendisse posuere volutpat vestibulum. Ut sem magna, rhoncus in odio nec, vehicula ornare nibh. Suspendisse potenti. 
                 </p> 
+                <!-- ==== Selected Works Start ==== -->
                 <h2 class ="subHeading-section"> Selected Works: </h2>
                 <ul id = "selectedWorks">
                     <li>
-                        <a href="work.php?id=8">Fei. Description and other relevant info. February 2023.</a>
+                        <a alt="link to artwork page" href="work.php?id=8">Fei. Description and other relevant info. February 2023.</a>
                     </li>
                     <li>
-                        <a href="work.php?id=22">She. Description and other relevant info. March 2023.</a>
+                        <a alt="link to artwork page" href="work.php?id=22">She. Description and other relevant info. March 2023.</a>
                     </li>
                     <li>
-                        <a href="work.php?id=14">Legion. Description and other relevant info. October 2022.</a>
+                        <a alt="link to artwork page" href="work.php?id=14">Legion. Description and other relevant info. October 2022.</a>
                     </li>
                 </ul>
             </div>
+            <!-- ==== Selected Works End ==== -->
+            <!-- ==== Image ==== -->
             <div id = "aboutMeImage" class="col-md-5">
-                <a href="work.php?id=18">
+                <a alt="link to artwork page" href="work.php?id=18">
                     <img src="Assets/img/AboutMeImage.jpg"  alt="painting of a group of people at a red waterfall with a capybara in the foreground">
                 </a>
             </div>
-        <div>
+        </div>
+        <!-- ==== About Me End ==== -->
+
         <?php include('footer.php'); ?>
-    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>
