@@ -53,7 +53,7 @@ $prev_workId = $stmt_5->fetchColumn();
             while($results= $stmt->fetch(PDO::FETCH_ASSOC)){ ?>
              <!-- ==== Work Info Start ==== -->
                     <!-- ==== Title==== -->
-                    <div id = "workInfo" class="col-md-5">
+                    <div id = "workInfo" class="col-md-5" style = "max-width: 100vw;">
                         <h1 class = "header-section">
                             <?php echo $results['Title']?>
                         </h1>

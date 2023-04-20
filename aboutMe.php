@@ -48,7 +48,7 @@
             <!-- ==== Image ==== -->
             <div id = "aboutMeImage" class="col-md-5">
                 <a alt="link to artwork page" href="work.php?id=18">
-                    <img src="Assets/img/AboutMeImage.jpg"  alt="painting of a group of people at a red waterfall with a capybara in the foreground">
+                    <img src="Assets/img/AboutMeImage.jpg"  class="img-fluid" alt="painting of a group of people at a red waterfall with a capybara in the foreground">
                 </a>
             </div>
         </div>

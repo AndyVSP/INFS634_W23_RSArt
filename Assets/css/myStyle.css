@@ -286,6 +286,13 @@ div #sampleImages .card-body .card-text{
     background-color: #C4B2B5;
 }
 
+@media (max-width: 767px) {
+    #galleryThumbnails {
+        position: absolute;
+        left: 157px;
+  }
+}
+  
 .img-thumbnail{
     height: 300px;
     width:300px;
