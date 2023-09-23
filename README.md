@@ -1,6 +1,6 @@
 # Renata Salazar (RSArt)
  
-This website is an art portfolio for Renata Salazar Parra.
+This website is an art portfolio for Renata Salazar Parra, created as the final assignment for INFS 634.
 
 ## Description
 
