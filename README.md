@@ -20,7 +20,6 @@ The goal of this website is to support Renata's professional goals. The website 
 ### Installing
 
 * The website files can be downloaded through the Git repository.
-* The database structure and content will be submitted through myCourses, per assignment instructions.
 
 ### Executing program
 
