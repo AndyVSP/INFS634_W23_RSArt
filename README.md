@@ -5,7 +5,8 @@ This website is an art portfolio for Renata Salazar Parra, created as the final 
 ## Description
 
 The goal of this website is to support Renata's professional goals. The website will act as an extension of her professional brand, give her a space to showcase her art, as well as allow for clients to contact her.
-[Figma Prototype](https://www.figma.com/proto/5WRt7R3n6FjTaPcZg24AXy/RSART?node-id=1-2&starting-point-node-id=1%3A2)
+
+*[Figma Prototype](https://www.figma.com/proto/5WRt7R3n6FjTaPcZg24AXy/RSART?node-id=1-2&starting-point-node-id=1%3A2)
 ### Dependencies
 
 * PHP 8.0.26
